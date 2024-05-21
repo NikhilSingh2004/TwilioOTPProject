@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login | Twilio OPT Project
+{% endblock title %}
+
+{% block content %}
+
+<div class="container my-5">
+    <h1 class="text-center display-5 alert alert-success fw-bold">Log In Page</h1>
+</div>
+
+<div class="container my-3 py-3">
+
+    <main class="form-signin m-5">
+        <div class="container text-center">
+            <div class="container">
+                <form action="{% url 'LogIn' %}" method="post" novalidate>
+                    {% csrf_token %}
+                    <table>
+                        {% for f in form %}
+                        {{ f }}<br /><br />
+                        {% endfor %}
+                        {{ form.non_field_errors }}
+                    </table>
+                    <button class="w-100 btn btn-lg btn-primary my-3"  type="submit">
+                        <h5>Get OTP</h5>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <p>Don't Have an Acccount?, <a href="{% url 'SignUp' %}">Sign Up</a></p>
+    </main>
+
+</div>
+
+{% endblock %}

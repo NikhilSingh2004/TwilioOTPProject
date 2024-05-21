@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}
+Profile | Twilio OPT Project
+{% endblock title %}
+
+{% block content %}
+
+<div class="container mt-5 mb-0">
+    <h1 class="text-center display-5 alert alert-success fw-bold">Welcome, {{request.user.username}}</h1>
+</div>
+
+{% endblock content %}
